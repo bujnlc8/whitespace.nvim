@@ -7,7 +7,7 @@ This is a simple neovim plugin to highlight and remove trailing whitespace.
 ```lua
 -- Using packer.nvim
 use {
-    'johnfrankmorgan/whitespace.nvim',
+    'bujnlc8/whitespace.nvim',
     config = function ()
         require('whitespace-nvim').setup({
             -- configuration options and their defaults
@@ -19,6 +19,8 @@ use {
             -- `ignored_filetypes` configures which filetypes to ignore when
             -- displaying trailing whitespace
             ignored_filetypes = { 'TelescopePrompt', 'Trouble', 'help' },
+            -- 文件后缀名，比如.class和.java文件的filetype相同，但是不希望.class文件标示出空白
+            ignored_suffixes = {".class"}
         })
 
         -- remove trailing whitespace with a keybinding
